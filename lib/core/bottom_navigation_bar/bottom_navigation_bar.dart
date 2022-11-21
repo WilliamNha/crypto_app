@@ -44,7 +44,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           currentIndex: currentIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          iconSize: 18,
+          iconSize: 20,
           onTap: (index) {
             setState(() {
               currentIndex = index;
@@ -114,8 +114,8 @@ class CustomActiveBottomBarItem extends StatelessWidget {
         Center(
           child: Container(
             margin: EdgeInsets.only(left: padding),
-            width: 35,
-            height: 35,
+            width: 38,
+            height: 38,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle, color: AppColor.primaryColor),
             child: Icon(
@@ -131,25 +131,9 @@ class CustomActiveBottomBarItem extends StatelessWidget {
         Text(
           buttonText,
           style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12),
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 13),
         )
       ],
     );
   }
 }
-
-// List<IconData> listOfIcons = [
-//   Icons.home_rounded,
-//   Icons.shopping_cart,
-//   Icons.local_shipping,
-//   Icons.wallet,
-//   Icons.account_circle_outlined,
-// ];
-
-// List<String> listOfStrings = [
-//   'Home',
-//   'Cart',
-//   'Orders',
-//   'Wellet',
-//   'Account',
-// ];
