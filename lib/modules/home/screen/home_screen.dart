@@ -1,9 +1,25 @@
+import 'package:crypto_tracker_app/modules/home/model/crypto_card_with_chart_model.dart';
+import 'package:crypto_tracker_app/widgets/home/custom_crypto_card_with_chart.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_deposit_button.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_notification_button.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_portfolio_card.dart';
+import 'package:crypto_tracker_app/widgets/home/custom_section_title.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class ChartData {
+  ChartData(this.x, this.y);
+  final int x;
+  final double? y;
+}
+
+final List<ChartData> chartData = [
+  ChartData(2010, 35),
+  ChartData(2011, 13),
+  ChartData(2012, 34),
+  ChartData(2013, 27),
+  ChartData(2014, 40)
+];
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -79,78 +95,56 @@ class HomeScreen extends StatelessWidget {
               SingleChildScrollView(
                 physics: const ClampingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 20),
-                      margin: const EdgeInsets.only(
-                        left: 20,
-                        top: 25,
-                      ),
-                      width: 180,
-                      height: 220,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: const Color(0xffF9FAFC),
-                      ),
-                      child: Column(children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, right: 10),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/svg/crypto_logo/bitcoin.svg',
-                                width: 50,
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text(
-                                    'BTC',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Bitcoin',
-                                    style: TextStyle(
-                                        color: Colors.black45, fontSize: 15),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ]),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 20, top: 25),
-                      width: 180,
-                      height: 220,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: const Color(0xffF9FAFC),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 20, top: 25),
-                      width: 180,
-                      height: 220,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: const Color(0xffF9FAFC),
-                      ),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Row(
+                    children: cardWithChartModelList
+                        .map((data) => CustomCryptoCardWithChart(
+                            logoPath: data.logoPath!,
+                            shortName: data.shortName!,
+                            fullName: data.fullName!,
+                            percent: data.percent!,
+                            price: data.price!,
+                            chartPriceList: data.chartPriceList!))
+                        .toList(),
+                    // children: [
+                    //   const CustomCryptoCardWithChart(
+                    //     logoPath: 'assets/svg/crypto_logo/bitcoin.svg',
+                    //     fullName: 'Bitcoin',
+                    //     shortName: 'BTC',
+                    //     price: 203,
+                    //     percent: 0.2,
+                    //     chartPriceList: [
+                    //       5,
+                    //       6,
+                    //       5,
+                    //       7,
+                    //       3,
+                    //       5,
+                    //       6,
+                    //       5,
+                    //     ],
+                    //   ),
+                    //   Container(
+                    //     margin: const EdgeInsets.only(left: 20, top: 25),
+                    //     width: 180,
+                    //     height: 220,
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(15),
+                    //       color: const Color(0xffF9FAFC),
+                    //     ),
+                    //   ),
+                    //   Container(
+                    //     margin: const EdgeInsets.only(left: 20, top: 25),
+                    //     width: 180,
+                    //     height: 220,
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(15),
+                    //       color: const Color(0xffF9FAFC),
+                    //     ),
+                    //   ),
+                    // ],
+                  ),
                 ),
               ),
               const CustomSectionTitle(
@@ -159,35 +153,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomSectionTitle extends StatelessWidget {
-  final String title;
-
-  const CustomSectionTitle({
-    required this.title,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          const Text(
-            'View all',
-            style: TextStyle(color: Colors.black45, fontSize: 15),
-          ),
-        ],
       ),
     );
   }

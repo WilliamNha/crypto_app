@@ -52,6 +52,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   loading_animation_widget: ^1.2.0+2
   flutter_svg: ^1.1.5
+  syncfusion_flutter_charts: ^20.3.57
 
   
 
