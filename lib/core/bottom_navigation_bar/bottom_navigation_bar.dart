@@ -1,7 +1,10 @@
 import 'package:crypto_tracker_app/constants/app_setting_color.dart';
+import 'package:crypto_tracker_app/modules/home/controller/home_controller.dart';
 import 'package:crypto_tracker_app/modules/home/screen/home_screen.dart';
+import 'package:crypto_tracker_app/modules/transaction/screen/transaction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});
@@ -15,11 +18,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   var currentIndex = 0;
   List<Widget> widgetOption = [
     const HomeScreen(),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.yellow,
-    ),
+    const TransactionScreen(),
     Container(
       width: double.infinity,
       height: double.infinity,
@@ -31,6 +30,14 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       color: Colors.green,
     ),
   ];
+  final homeController = Get.put(HomeController());
+  @override
+  void initState() {
+    homeController.getCoinData();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double displayWidth = MediaQuery.of(context).size.width;

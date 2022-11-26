@@ -1,11 +1,11 @@
-class CryptoChartWithCardModel {
+class CryptoCardModel {
   final String? logoPath;
   final String? shortName;
   final String? fullName;
   final double? price;
   final double? percent;
   final List<double>? chartPriceList;
-  const CryptoChartWithCardModel({
+  const CryptoCardModel({
     this.chartPriceList,
     this.fullName,
     this.logoPath,
@@ -15,8 +15,8 @@ class CryptoChartWithCardModel {
   });
 }
 
-List<CryptoChartWithCardModel> cardWithChartModelList = [
-  const CryptoChartWithCardModel(
+List<CryptoCardModel> cardWithChartModelList = [
+  const CryptoCardModel(
     logoPath: 'assets/svg/crypto_logo/bitcoin.svg',
     fullName: 'Bitcoin',
     shortName: 'BTC',
@@ -33,7 +33,7 @@ List<CryptoChartWithCardModel> cardWithChartModelList = [
       5,
     ],
   ),
-  const CryptoChartWithCardModel(
+  const CryptoCardModel(
     logoPath: 'assets/svg/crypto_logo/ethereum.svg',
     fullName: 'Ethereum',
     shortName: 'ETH',
@@ -50,7 +50,7 @@ List<CryptoChartWithCardModel> cardWithChartModelList = [
       3,
     ],
   ),
-  const CryptoChartWithCardModel(
+  const CryptoCardModel(
     logoPath: 'assets/svg/crypto_logo/bnb.svg',
     fullName: 'BNB',
     shortName: 'BNB',
@@ -67,7 +67,7 @@ List<CryptoChartWithCardModel> cardWithChartModelList = [
       7,
     ],
   ),
-  const CryptoChartWithCardModel(
+  const CryptoCardModel(
     logoPath: 'assets/svg/crypto_logo/dogecoin.svg',
     fullName: 'Dogecoin',
     shortName: 'DOGE',

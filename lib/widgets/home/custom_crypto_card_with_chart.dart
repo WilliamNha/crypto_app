@@ -32,7 +32,8 @@ class CustomCryptoCardWithChart extends StatelessWidget {
       height: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: const Color(0xffF9FAFC),
+        color: Colors.white,
+        //  const Color(0xffF9FAFC),
       ),
       child: Column(children: [
         Padding(
