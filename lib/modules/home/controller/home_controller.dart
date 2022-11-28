@@ -20,15 +20,7 @@ class HomeController extends GetxController {
       responseJson.map((data) {
         coinDataList.add(CoinDataModel.fromJson(data));
       }).toList();
-      // coinDataList.map((data) async {
-      //   listLogo.add(
-      //     SvgPicture.network(
-      //       'https://logo.chainbit.xyz/${data.symbol}',
-      //       width: 50,
-      //       height: 50,
-      //     ),
-      //   );
-      // });
+
       isLoading(false);
     }).onError((ErrorModel error, stackTrace) {
       debugPrint(

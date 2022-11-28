@@ -1,7 +1,9 @@
 import 'package:crypto_tracker_app/constants/app_setting_color.dart';
 import 'package:crypto_tracker_app/modules/home/controller/home_controller.dart';
 import 'package:crypto_tracker_app/modules/home/screen/home_screen.dart';
+import 'package:crypto_tracker_app/modules/market/screen/market_screen.dart';
 import 'package:crypto_tracker_app/modules/transaction/screen/transaction_screen.dart';
+import 'package:crypto_tracker_app/modules/user/screen/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -19,16 +21,8 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   List<Widget> widgetOption = [
     const HomeScreen(),
     const TransactionScreen(),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.blue,
-    ),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.green,
-    ),
+    const MarketScreen(),
+    const UserScreen()
   ];
   final homeController = Get.put(HomeController());
   @override
@@ -81,7 +75,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             BottomNavigationBarItem(
                 activeIcon: CustomActiveBottomBarItem(
                   iconData: FontAwesomeIcons.arrowTrendUp,
-                  buttonText: 'History',
+                  buttonText: 'Market',
                 ),
                 icon: Icon(
                   FontAwesomeIcons.arrowTrendUp,
