@@ -12,7 +12,7 @@ class UserScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.white,
+        color: const Color(0xffF9FAFC),
         child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Column(children: [

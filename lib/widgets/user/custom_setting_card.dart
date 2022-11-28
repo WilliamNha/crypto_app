@@ -57,8 +57,8 @@ class _CustomSettingCardState extends State<CustomSettingCard> {
                     isSwitched = value;
                   });
                 },
-                activeTrackColor: Colors.black38,
-                activeColor: AppColor.primaryColor,
+                activeTrackColor: Colors.blue,
+                activeColor: Colors.white,
               )
             : const Padding(
                 padding: EdgeInsets.only(right: 10),
