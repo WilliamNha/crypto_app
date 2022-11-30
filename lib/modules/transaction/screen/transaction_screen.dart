@@ -192,6 +192,9 @@ class _TransactionScreenState extends State<TransactionScreen> {
                 }),
                 itemCount: cardWithChartModelList.length,
               ),
+              SizedBox(
+                height: 20,
+              ),
             ])),
       ),
     );
