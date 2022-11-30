@@ -67,7 +67,7 @@ class UserScreen extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        'Invite friends now to get \$20 each.',
+                        'Invite friends to get \$20 each.',
                         style: TextStyle(color: Colors.white),
                       )
                     ],

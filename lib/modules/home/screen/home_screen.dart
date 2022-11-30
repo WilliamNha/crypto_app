@@ -7,6 +7,7 @@ import 'package:crypto_tracker_app/widgets/home/custom_notification_button.dart'
 import 'package:crypto_tracker_app/widgets/home/custom_portfolio_card.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_section_title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
@@ -145,32 +146,58 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const CustomSectionTitle(
                                     title: 'Matket Lastest',
                                   ),
-                                  ListView.builder(
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    shrinkWrap: true,
-                                    itemBuilder: ((context, index) {
-                                      return CustomCoinCard(
-                                        coinName: homeController
-                                            .coinDataList[index].name!,
-                                        coinSymbol: homeController
-                                            .coinDataList[index].symbol!,
-                                        price: homeController
-                                            .coinDataList[index]
-                                            .quote!
-                                            .uSD!
-                                            .price!
-                                            .toStringAsFixed(2),
-                                        percentChange24h: homeController
-                                            .coinDataList[index]
-                                            .quote!
-                                            .uSD!
-                                            .percentChange24h!
-                                            .toStringAsFixed(2),
-                                      );
-                                    }),
-                                    itemCount: 10,
-                                  ),
+                                  homeController.coinDataList.isEmpty
+                                      ? Column(
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(
+                                                  top: 30, bottom: 30),
+                                              color: const Color(0xffF9FAFC),
+                                              child: Center(
+                                                  child: SvgPicture.asset(
+                                                'assets/svg/something_went_wrong.svg',
+                                                width: 100,
+                                                height: 200,
+                                                // color: AppColor.primaryColor,
+                                              )),
+                                            ),
+                                            Text(
+                                              'Sorry, Something went wrong!',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                          ],
+                                        )
+                                      : ListView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
+                                          shrinkWrap: true,
+                                          itemBuilder: ((context, index) {
+                                            return CustomCoinCard(
+                                              coinName: homeController
+                                                  .coinDataList[index].name!,
+                                              coinSymbol: homeController
+                                                  .coinDataList[index].symbol!,
+                                              price: homeController
+                                                  .coinDataList[index]
+                                                  .quote!
+                                                  .uSD!
+                                                  .price!
+                                                  .toStringAsFixed(2),
+                                              percentChange24h: homeController
+                                                  .coinDataList[index]
+                                                  .quote!
+                                                  .uSD!
+                                                  .percentChange24h!
+                                                  .toStringAsFixed(2),
+                                            );
+                                          }),
+                                          itemCount: 10,
+                                        ),
                                   const SizedBox(
                                     height: 20,
                                   ),

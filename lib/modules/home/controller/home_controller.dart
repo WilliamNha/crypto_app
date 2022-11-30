@@ -10,6 +10,7 @@ class HomeController extends GetxController {
   final _apiBaseHelper = ApiBaseHelper();
   final coinDataModel = CoinDataModel().obs;
   final coinDataList = <CoinDataModel>[].obs;
+  final chipDataList = <List<CoinDataModel>>[].obs;
   final isLoading = false.obs;
 
   Future getCoinData() async {
@@ -30,6 +31,11 @@ class HomeController extends GetxController {
           }).toList();
           isLoading(false);
         }
+        chipDataList.add(coinDataList);
+        chipDataList.add(coinDataList.getRange(10, 20).toList());
+        coinDataList.getRange(20, 30).toList();
+        coinDataList.getRange(30, 40).toList();
+        coinDataList.getRange(30, 40).toList();
       });
     } catch (e) {
       debugPrint('error ====== $e');

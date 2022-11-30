@@ -20,8 +20,8 @@ class CustomDepositButton extends StatelessWidget {
             spreadRadius: 0.2,
             blurRadius: 0.2)
       ], borderRadius: BorderRadius.circular(15), color: Colors.white),
-      width: 145,
-      height: 50,
+      width: 135,
+      height: 48,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
