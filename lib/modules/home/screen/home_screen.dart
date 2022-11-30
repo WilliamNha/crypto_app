@@ -1,3 +1,4 @@
+import 'package:crypto_tracker_app/constants/app_setting_color.dart';
 import 'package:crypto_tracker_app/modules/home/model/crypto_card_model.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_coin_card.dart';
 import 'package:crypto_tracker_app/widgets/home/custom_crypto_card_with_chart.dart';
@@ -47,9 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         leading: const Center(
           child: Text(
-            'GoCrypto',
+            'Cryptovest',
             style: TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                color: AppColor.primaryColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
         ),
         titleSpacing: 0,

@@ -53,6 +53,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+2
   flutter_svg: ^1.1.5
   syncfusion_flutter_charts: ^20.3.57
+  
 
   
 
@@ -61,7 +62,15 @@ dev_dependencies:
   freezed: ^2.1.0+1
   json_serializable: ^6.1.4
   json_annotation: ^4.6.0
+  flutter_launcher_icons: ^0.11.0
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  
+  
   flutter_test:
     sdk: flutter
 

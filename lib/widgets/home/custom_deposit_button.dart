@@ -12,7 +12,7 @@ class CustomDepositButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       decoration: BoxDecoration(boxShadow: const [
         BoxShadow(
             color: Colors.black38,
@@ -20,8 +20,8 @@ class CustomDepositButton extends StatelessWidget {
             spreadRadius: 0.2,
             blurRadius: 0.2)
       ], borderRadius: BorderRadius.circular(15), color: Colors.white),
-      width: 160,
-      height: 60,
+      width: 145,
+      height: 50,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: AppColor.primaryColor,
         body: Center(
           child: Text(
-            'GoCrypto',
+            'Cryptovest',
             style: TextStyle(
                 color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
           ),

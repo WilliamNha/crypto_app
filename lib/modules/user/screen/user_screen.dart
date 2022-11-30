@@ -17,7 +17,7 @@ class UserScreen extends StatelessWidget {
             physics: const ClampingScrollPhysics(),
             child: Column(children: [
               const Padding(
-                padding: EdgeInsets.only(top: 90, bottom: 20),
+                padding: EdgeInsets.only(top: 70, bottom: 20),
                 child: CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage('assets/images/profile.jpeg'),
@@ -63,15 +63,16 @@ class UserScreen extends StatelessWidget {
                         'Invite Friends',
                         style: TextStyle(color: Colors.white),
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text(
-                        'Invire your friends and get \$20 each.',
+                        'Invite friends now to get \$20 each.',
                         style: TextStyle(color: Colors.white),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const Spacer(),
                   const Icon(
                     Icons.chevron_right,
                     color: Colors.white,
